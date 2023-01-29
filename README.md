@@ -36,11 +36,11 @@ CREATE TABLE colaborador (
 ```sql
 INSERT INTO w2oTest.empresa 
 (nome, cnpj, telefone, email, endereco) 
-VALUES ('TestName', '51.673.319/0001-19', '00000000000', 'test@email.com', 'Rua Test W2O');
+VALUES ('Empresa Test', '51.673.319/0001-19', '00000000000', 'testEmpresa@gmail.com', 'Rua Test 156');
 
 INSERT INTO w2oTest.empresa 
 (nome, cnpj, telefone, email, endereco) 
-VALUES ('Nome Exemplo', '40.397.363/0001-27', '10000000001', 'nome@exemplo.com', 'Rua de Exemplos');
+VALUES ('Github Exemplo', '40.397.363/0001-27', '10000000001', 'nome@exemplo.com', 'Rua de Exemplos 89');
 
 INSERT INTO w2oTest.empresa 
 (nome, cnpj, telefone, email, endereco) 
@@ -48,7 +48,7 @@ VALUES ('EmpresaDeTestes', '55.270.056/0001-58', '47990000000', 'empresadetestes
 
 INSERT INTO w2oTest.colaborador 
 (nome, telefone, email, data_nascimento, empresa_id) 
-VALUES ('Rafael Schamber', '00000000000', 'rafael@mail.com', '1991/07/28', 1);
+VALUES ('Leonardo Capiro', '00000000000', 'leo@gmail.com', '1988/07/28', 1);
 
 INSERT INTO w2oTest.colaborador 
 (nome, telefone, email, data_nascimento, empresa_id) 
