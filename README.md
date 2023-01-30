@@ -1,7 +1,7 @@
 
 Test W2O.
 
-Usando somento Core PHP, Bootstrap 5 e Mysqli.
+Usando somente Core PHP, Bootstrap 5 e Mysqli.
 
 clonar https://github.com/RafaelVinS/w2oTest.git
 ou baixar https://github.com/RafaelVinS/w2oTest/archive/refs/heads/master.zip
