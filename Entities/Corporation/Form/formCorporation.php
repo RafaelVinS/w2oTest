@@ -23,15 +23,11 @@
 
     if (!$validateCNPJ) die("O CNPJ não é válido!");
 
-    if (!preg_match("/^[a-zA-Z-' ]*$/", $corporationName)) die("So letras e espaço branco são válidos!");
+    if (!preg_match("/^[a-zA-Z-' ]*$/", $corporationName)) die("Nome: So letras e espaço branco são válidos!");
 
     if (!filter_var($corporationEmail, FILTER_VALIDATE_EMAIL)) die("E-mail não é válido!");
 
     if (empty($corporationId)) {
-        echo $corporationId;
-        print_r($corporationId);
-        var_dump($corporationId);
-        die($corporationId);
         $sql = "INSERT INTO empresa (nome, cnpj, telefone, email, endereco) 
                 VALUES (?, ?, ?, ?, ?)";
 

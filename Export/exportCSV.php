@@ -4,12 +4,15 @@
 
     $column     = $_GET['column'];
     $sort_order = $_GET['order'];
+    $id         = $_GET['empresa_id'];
 
     $sort_order = $sort_order == 'asc' ? 'desc' : 'asc';
 
     if(isset($_GET['column']) && isset($_GET['order'])) $order = "ORDER BY $column $sort_order";
+
+    $sql = "WHERE 1 = 1 AND empresa_id = $id";
     
-    $sql    = "SELECT c.* FROM colaborador c $order";
+    $sql    = "SELECT c.* FROM colaborador c $sql $order";
     $result = $conn->query($sql);
 
     $delimiter = ";"; 

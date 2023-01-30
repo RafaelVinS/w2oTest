@@ -46,9 +46,6 @@
             <div class="field form-outline">
                 <label class="form-label" for="corporationPhone">Telefone:</label>
                 <input type="tel" name="corporationPhone" id="corporationPhone" class="form-control" placeholder="Número de Telefone" mask="(00) 0 0000-0000" value="<?php echo $telefone; ?>" required/>
-                <!-- <a class="whatsapp-link" href="https://web.whatsapp.com/send?phone=<?php 
-                // echo $_GET['corporationPhone']; 
-                ?>" target="_blank">Empresas</a> -->
             </div>
             <br>
             <div class="field form-outline">
@@ -58,17 +55,10 @@
             <br>
             <div class="field form-outline">
                 <label class="form-label" for="corporationAddress">Endereço:</label>
-                <input disabled type="text" name="corporationAddress" id="corporationAddress" class="form-control" placeholder="Endereço" value="<?php echo $endereco; ?>"/>
+                <input type="text" name="corporationAddress" id="corporationAddress" class="form-control" placeholder="Endereço" value="<?php echo $endereco; ?>"/>
             </div>
             <br>
             <button type="ui button submit" class="btn btn-primary">Cadastrar</button>
         </form>
-        <!-- <form action="formCorporation.php?corporationCEP=<?php ?>" method="POST" class="ui form" style="display: flex;">
-            <div class="field form-outline" style="display: flex;">
-                <label class="form-label" for="corporationCEP">CEP:</label>
-                <input type="text" name="corporationCEP" id="corporationCEP" class="form-control" placeholder="CEP" value="<?php ?>"/>
-                <button type="ui button submit" class="btn btn-dark btn-sm">Buscar</button>
-            </div>
-        </form> -->
     </body>
 </html>

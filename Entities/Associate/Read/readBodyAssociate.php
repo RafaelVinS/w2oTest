@@ -14,10 +14,21 @@
             $sort_order = isset($_GET['order']) && strtolower($_GET['order']) == 'desc' ? 'DESC' : 'ASC';
             $sql = '';
 
-            if(!empty($id)) $sql = "WHERE 1 = 1 AND empresa_id = $id";
+            if(!empty($id)) {
+                $sql = "WHERE 1 = 1 AND empresa_id = $id";
+                $_SESSION["id"] = $id;
+                $sql    = "SELECT c.* FROM colaborador c $sql ORDER BY $column $sort_order";
+                $result = $conn->query($sql);
+            }
 
-            $sql    = "SELECT c.* FROM colaborador c $sql ORDER BY $column $sort_order";
-            $result = $conn->query($sql);
+            if(empty($id)) {
+                $id = $_SESSION["id"];
+                $sql = "WHERE 1 = 1 AND empresa_id = $id";
+                $sql    = "SELECT c.* FROM colaborador c $sql ORDER BY $column $sort_order";
+                $result = $conn->query($sql);
+            }
+
+            
 
             $up_or_down  = str_replace(array('ASC','DESC'), array('up','down'), $sort_order); 
             $asc_or_desc = $sort_order == 'ASC' ? 'desc' : 'asc';
@@ -27,7 +38,7 @@
             <form method="POST" action="../../Associate/Form/formAssociate.php?empresa_id=<?php echo $id; ?>">
                 <button type="submit" class="btn btn-dark btn-sm" >Cadastrar Colaborador</button>
             </form>
-            <form style="margin-left: 5px;" method="POST" action="../../../Export/exportCSV.php?column=<?php echo $column; ?>&order=<?php echo $asc_or_desc; ?>">
+            <form style="margin-left: 5px;" method="POST" action="../../../Export/exportCSV.php?column=<?php echo $column; ?>&order=<?php echo $asc_or_desc; ?>&empresa_id=<?php echo $id; ?>">
                 <button type="submit" class="btn btn-dark btn-sm" >Exportar CSV</button>
             </form>
         </div>
